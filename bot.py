@@ -14,14 +14,22 @@ trainer.train([
 
 print("Welcome to the Bot Service!")
 name = input("Mirka: What's your name? ")
-an = input('Mirka: Please enter your age, gender, weight and height\n' + name + ':').split(' ')
-print(type(name))
+an = input('Mirka: Please enter your age, gender, weight and height\n' + name + ': ').split(' ')
+
+new_dict = {}
+features = ['age', 'gender', 'weight', 'height']
+user['name'] = name
+
+for i in range(len(an)):
+    user[features[i]] = an[i]
+
+
 while True:
-    request = input('Mirka: Do you want a prediction?\n'+ name + ':');
+    request = input('Mirka: Do you want a prediction?\n '+ name + ': ');
     if request == 'No' or request == 'no':
         print('Mirka: Ok, bye')
         break
 
     else:
         response = bot.get_response(request)
-        print('Mirka:',response)
+        print('Mirka: ',response)
