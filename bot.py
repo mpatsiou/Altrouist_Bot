@@ -16,7 +16,7 @@ print("Welcome to the Bot Service!")
 name = input("Mirka: What's your name? ")
 an = input('Mirka: Please enter your age, gender, weight and height\n' + name + ': ').split(' ')
 
-new_dict = {}
+user = {}
 features = ['age', 'gender', 'weight', 'height']
 user['name'] = name
 
